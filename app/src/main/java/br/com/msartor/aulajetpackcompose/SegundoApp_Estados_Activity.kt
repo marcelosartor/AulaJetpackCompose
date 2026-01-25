@@ -10,12 +10,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
@@ -42,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import br.com.msartor.aulajetpackcompose.model.Usuario
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
-class SegundoAppActivity : ComponentActivity() {
+class SegundoApp_Estados_Activity : ComponentActivity() {
     private val usuarios = listOf(
         Usuario("Marcelo",52),
         Usuario("Vanessa",53),

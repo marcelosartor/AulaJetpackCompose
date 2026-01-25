@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AulaJetpackCompose</string>
     <string name="title_activity_segundo_app">SegundoApp</string>
+    <string name="title_activity_terceiro_app_componentes_de_interface">
+        TerceiroApp_ComponentesDeInterface_Activity
+    </string>
 </resources>
