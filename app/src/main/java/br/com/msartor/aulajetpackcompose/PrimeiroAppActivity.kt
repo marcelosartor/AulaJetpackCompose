@@ -17,9 +17,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -39,7 +37,7 @@ import br.com.msartor.aulajetpackcompose.model.Usuario
 
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
-class MainActivity : ComponentActivity() {
+class PrimeiroAppActivity : ComponentActivity() {
     private val usuarios = listOf(
         Usuario("Marcelo",52),
         Usuario("Vanessa",53),
@@ -89,9 +87,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+
+
     /*---------------------------------------------------------------------------------------
     | INICIO DAS FUNCÇÕES DE COMPOSE                                                        |
-    ----------------------------------------------------------------------------------------*/
+     ---------------------------------------------------------------------------------------*/
+
     @SuppressLint("Range")
     @Composable
     fun PrimeiroApp(){
@@ -137,7 +138,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
             /*
-
 
             LazyHorizontalGrid(
                 //columns = GridCells.Adaptive(122.dp),
