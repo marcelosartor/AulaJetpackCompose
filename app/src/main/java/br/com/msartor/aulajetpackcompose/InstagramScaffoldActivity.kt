@@ -17,14 +17,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.msartor.aulajetpackcompose.components.AreaDestaque
 import br.com.msartor.aulajetpackcompose.components.BarraSuperior
+import br.com.msartor.aulajetpackcompose.model.Destaque
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class InstagramScaffoldActivity : ComponentActivity() {
+
+    private val listaDestaques = listOf<Destaque>(
+        Destaque(imagemPerfilRes = R.drawable.perfil_01, nome = "Fulano 01"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_02, nome = "Fulano 02"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 03"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_01, nome = "Fulano 04"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_02, nome = "Fulano 05"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 06"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_01, nome = "Fulano 07"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_02, nome = "Fulano 08"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 09"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_01, nome = "Fulano 10"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_02, nome = "Fulano 11"),
+        Destaque(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 12"),
+    )
+
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
+        enableEdgeToEdge()
         setContent {
             AulaJetpackComposeTheme {
                 Scaffold(
@@ -49,6 +67,8 @@ class InstagramScaffoldActivity : ComponentActivity() {
     @Composable
     fun Home(modifier: Modifier = Modifier) {
         Column(modifier = modifier) {
+            // Area Destaque
+            AreaDestaque(listaDestaques)
             Text(text = "Ola App!")
         }
     }

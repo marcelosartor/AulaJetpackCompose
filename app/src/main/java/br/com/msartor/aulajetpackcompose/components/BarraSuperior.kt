@@ -32,10 +32,10 @@ fun BarraSuperior(modifier: Modifier = Modifier){
             Text(text = "Instagram")
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Primaria, //Color(0xFF009688),
-            navigationIconContentColor = Color.White,
-            titleContentColor = Color.White,
-            actionIconContentColor = Color.White
+            //containerColor = Primaria, //Color(0xFF009688),
+            //navigationIconContentColor = Color.White,
+            //titleContentColor = Color.White,
+            actionIconContentColor = Color.Black
         ),
         navigationIcon = {
             Icon(
