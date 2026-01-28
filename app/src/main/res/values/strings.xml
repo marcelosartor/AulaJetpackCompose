@@ -4,4 +4,5 @@
     <string name="title_activity_terceiro_app_componentes_de_interface">
         TerceiroApp_ComponentesDeInterface_Activity
     </string>
+    <string name="title_activity_instagram_scaffold">InstagramScaffoldActivity</string>
 </resources>
