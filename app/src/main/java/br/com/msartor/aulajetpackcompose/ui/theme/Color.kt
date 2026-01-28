@@ -12,5 +12,6 @@ val Pink40 = Color(0xFF7D5260)
 val Teal40 = Color(0xFF009688)
 
 // Cores customizadas
-val Primaria = Color(0xFFFF5722)
+//val Primaria = Color(0xFFFF5722)
+val Primaria = Teal40
 val Secundaria = Color(0xFFFF825B)

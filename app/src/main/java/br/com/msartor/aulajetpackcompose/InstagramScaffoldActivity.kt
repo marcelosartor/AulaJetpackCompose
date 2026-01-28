@@ -17,23 +17,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.msartor.aulajetpackcompose.components.BarraSuperior
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class InstagramScaffoldActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             AulaJetpackComposeTheme {
                 Scaffold(
-                    topBar ={
-                        TopAppBar(
-                            title = {
-                                Text(text = "Instagram")
-                            }
-                        )
-                    },
+                    topBar ={ BarraSuperior() },
                     bottomBar = {
                         BottomAppBar() {
                             Text(text = "bottom")
