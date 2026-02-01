@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.msartor.aulajetpackcompose.R
@@ -47,10 +49,13 @@ class InstagramScaffoldActivity : ComponentActivity() {
         Postagem(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 03", fotoRes = R.drawable.praia, descricao = "Mussum Ipsum, cacilds vidis litro abertis. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Interagi no mé, cursus quis, vehicula ac nisi. A ordem dos tratores não altera o pão duris. Mé faiz elementum girarzis, nisi eros vermeio."),
     )
 
-    //private val usuarioViewModel: UsuarioViewModel by viewModels()
+    private val usuarioViewModel: UsuarioViewModel by viewModels()
 
 
-
+    override fun onStart() {
+        super.onStart()
+        usuarioViewModel.recuperarUsuarios()
+    }
 
 
 
@@ -79,10 +84,16 @@ class InstagramScaffoldActivity : ComponentActivity() {
 
     @Composable
     fun Home(modifier: Modifier = Modifier) {
+        // Se necessario.
+        // val usuarioViewModelComposable = viewModel(modelClass = UsuarioViewModel::class.java)
+
+        val listaUsuarios by usuarioViewModel.usuarios.observeAsState(initial = emptyList())
+
+
 
         Column(modifier = modifier) {
             // Area Destaque
-            AreaDestaque(listaDestaques = listaDestaques)
+            AreaDestaque(listaUsuarios = listaUsuarios)
             HorizontalDivider()
             AreaPostagem(listaPostagem = listaPostagens)
         }
