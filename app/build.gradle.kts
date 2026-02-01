@@ -2,14 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
     namespace = "br.com.msartor.aulajetpackcompose"
-    compileSdk {
-        version = release(36)
-    }
-
+    compileSdk = 36
+    
     defaultConfig {
         applicationId = "br.com.msartor.aulajetpackcompose"
         minSdk = 29
@@ -42,6 +42,27 @@ android {
 }
 
 dependencies {
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Jetpack lifecycle
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // ViewModel utilities for Compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.compose.runtime.livedata)
+
+    // Fragment Ktx
+    implementation(libs.androidx.fragment.ktx)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

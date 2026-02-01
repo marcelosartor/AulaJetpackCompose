@@ -50,7 +50,7 @@ class InstagramScaffoldActivity : ComponentActivity() {
         Postagem(imagemPerfilRes = R.drawable.perfil_03, nome = "Fulano 03", fotoRes = R.drawable.praia, descricao = "Mussum Ipsum, cacilds vidis litro abertis. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Interagi no mé, cursus quis, vehicula ac nisi. A ordem dos tratores não altera o pão duris. Mé faiz elementum girarzis, nisi eros vermeio."),
     )
 
-    @OptIn(ExperimentalMaterial3Api::class)
+    //@OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
