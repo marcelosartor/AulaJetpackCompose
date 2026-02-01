@@ -1,4 +1,4 @@
-package br.com.msartor.aulajetpackcompose.components
+package br.com.msartor.aulajetpackcompose.ui.view.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button

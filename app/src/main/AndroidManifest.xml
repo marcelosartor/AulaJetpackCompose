@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"
+
     <application
+        android:name=".di.CustomApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaJetpackCompose">
         <activity
-            android:name=".InstagramScaffoldActivity"
+            android:name=".ui.view.InstagramScaffoldActivity"
             android:exported="true"
             android:label="@string/title_activity_instagram_scaffold"
             android:theme="@style/Theme.AulaJetpackCompose">
@@ -23,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TerceiroApp_ComponentesDeInterface_Activity"
+            android:name=".ui.view.TerceiroApp_ComponentesDeInterface_Activity"
             android:exported="true"
             android:label="@string/title_activity_terceiro_app_componentes_de_interface"
             android:theme="@style/Theme.AulaJetpackCompose">
@@ -34,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SegundoApp_Estados_Activity"
+            android:name=".ui.view.SegundoApp_Estados_Activity"
             android:exported="true"
             android:label="@string/title_activity_segundo_app"
             android:theme="@style/Theme.AulaJetpackCompose">

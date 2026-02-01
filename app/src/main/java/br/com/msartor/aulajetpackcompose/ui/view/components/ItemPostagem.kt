@@ -1,4 +1,4 @@
-package br.com.msartor.aulajetpackcompose.components
+package br.com.msartor.aulajetpackcompose.ui.view.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -18,8 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.msartor.aulajetpackcompose.R
-import br.com.msartor.aulajetpackcompose.model.Destaque
-import br.com.msartor.aulajetpackcompose.model.Postagem
+import br.com.msartor.aulajetpackcompose.data.remore.model.Postagem
 
 @Composable
 fun ItemPostagem(postagem: Postagem, modifier: Modifier = Modifier) {

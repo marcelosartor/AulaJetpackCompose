@@ -1,4 +1,4 @@
-package br.com.msartor.aulajetpackcompose
+package br.com.msartor.aulajetpackcompose.ui.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -33,7 +33,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.msartor.aulajetpackcompose.model.Usuario
+import br.com.msartor.aulajetpackcompose.R
+import br.com.msartor.aulajetpackcompose.data.remore.model.Usuario
 
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 

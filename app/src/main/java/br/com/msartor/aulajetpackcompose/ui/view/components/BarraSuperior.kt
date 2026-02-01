@@ -1,10 +1,7 @@
-package br.com.msartor.aulajetpackcompose.components
+package br.com.msartor.aulajetpackcompose.ui.view.components
 
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.progressSemantics
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
@@ -13,14 +10,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 import androidx.compose.ui.tooling.preview.Preview
-import br.com.msartor.aulajetpackcompose.ui.theme.Primaria
 
 
 @OptIn(ExperimentalMaterial3Api::class)

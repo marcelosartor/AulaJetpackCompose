@@ -1,4 +1,4 @@
-package br.com.msartor.aulajetpackcompose
+package br.com.msartor.aulajetpackcompose.ui.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -23,7 +23,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -42,7 +41,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.msartor.aulajetpackcompose.model.Usuario
+import br.com.msartor.aulajetpackcompose.R
+import br.com.msartor.aulajetpackcompose.data.remore.model.Usuario
 import br.com.msartor.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class TerceiroApp_ComponentesDeInterface_Activity : ComponentActivity() {

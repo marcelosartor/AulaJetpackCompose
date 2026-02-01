@@ -1,4 +1,4 @@
-package br.com.msartor.aulajetpackcompose.model
+package br.com.msartor.aulajetpackcompose.data.remore.model
 
 data class Destaque(
     val imagemPerfilRes: Int,
