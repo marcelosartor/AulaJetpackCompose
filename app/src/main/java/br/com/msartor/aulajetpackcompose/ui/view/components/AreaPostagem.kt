@@ -9,7 +9,7 @@ import br.com.msartor.aulajetpackcompose.data.remote.model.Postagem
 @Composable
 fun AreaPostagem(listaPostagens: List<Postagem>, modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
-        items(listaPostagens) { postagem ->
+        items(listaPostagens, key = { it.id }) { postagem ->
             ItemPostagem(postagem = postagem)
         }
     }

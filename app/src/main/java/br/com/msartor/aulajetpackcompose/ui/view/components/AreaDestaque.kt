@@ -9,7 +9,7 @@ import br.com.msartor.aulajetpackcompose.data.remote.model.Destaque
 @Composable
 fun AreaDestaque(listaDestaques: List<Destaque>, modifier: Modifier = Modifier) {
     LazyRow(modifier = modifier) {
-        items(listaDestaques) { destaque ->
+        items(listaDestaques, key = { it.id }) { destaque ->
             ItemDestaque(destaque = destaque)
         }
     }

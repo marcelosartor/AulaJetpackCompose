@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AulaJetpackCompose</string>
     <string name="title_activity_instagram_scaffold">InstagramScaffoldActivity</string>
+    <string name="tentar_novamente">Tentar novamente</string>
 </resources>

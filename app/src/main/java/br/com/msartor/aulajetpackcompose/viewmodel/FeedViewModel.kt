@@ -1,13 +1,13 @@
 package br.com.msartor.aulajetpackcompose.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.msartor.aulajetpackcompose.data.remote.model.Destaque
-import br.com.msartor.aulajetpackcompose.data.remote.model.Postagem
 import br.com.msartor.aulajetpackcompose.data.remote.repository.FeedRepository
+import br.com.msartor.aulajetpackcompose.ui.view.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,17 +16,21 @@ class FeedViewModel @Inject constructor(
     private val feedRepository: FeedRepository,
 ) : ViewModel() {
 
-    private val _destaques = MutableLiveData<List<Destaque>>(emptyList())
-    val destaques: LiveData<List<Destaque>> = _destaques
+    private val _uiState = MutableStateFlow<HomeUiState>(HomeUiState.Carregando)
+    val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
-    private val _postagens = MutableLiveData<List<Postagem>>(emptyList())
-    val postagens: LiveData<List<Postagem>> = _postagens
+    // O ViewModel sobrevive à rotação: o carregamento acontece uma vez só.
+    init {
+        carregarFeed()
+    }
 
     fun carregarFeed() {
+        _uiState.value = HomeUiState.Carregando
         viewModelScope.launch {
-            val feed = feedRepository.recuperarFeed()
-            _destaques.value = feed.destaques
-            _postagens.value = feed.postagens
+            _uiState.value = feedRepository.recuperarFeed().fold(
+                onSuccess = { HomeUiState.Sucesso(it.destaques, it.postagens) },
+                onFailure = { HomeUiState.Erro(it.message ?: "Não foi possível carregar o feed") },
+            )
         }
     }
 }
