@@ -1,8 +1,9 @@
 package br.com.msartor.aulajetpackcompose.ui.view.components
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -13,49 +14,62 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.msartor.aulajetpackcompose.R
-import br.com.msartor.aulajetpackcompose.data.remore.model.Postagem
+import br.com.msartor.aulajetpackcompose.data.remote.model.Postagem
+import coil3.compose.AsyncImage
 
 @Composable
 fun ItemPostagem(postagem: Postagem, modifier: Modifier = Modifier) {
-    Column(
-
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(8.dp)) {
-            Image(
+    Column(modifier = modifier) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(8.dp),
+        ) {
+            AsyncImage(
+                model = postagem.imagemPerfilUrl,
+                contentDescription = null,
                 modifier = Modifier
                     .size(56.dp)
-                    .clip(CircleShape),
-
-                painter = painterResource(id = postagem.imagemPerfilRes), contentDescription = null,
-                contentScale = ContentScale.Crop
+                    .clip(CircleShape)
+                    .background(Color.LightGray, CircleShape),
+                contentScale = ContentScale.Crop,
             )
             Text(
                 text = postagem.nome,
-                modifier = Modifier.padding(start=8.dp),
-                style = MaterialTheme.typography.titleMedium
+                modifier = Modifier.padding(start = 8.dp),
+                style = MaterialTheme.typography.titleMedium,
             )
         }
-        Image(
+        AsyncImage(
+            model = postagem.fotoUrl,
+            contentDescription = null,
             modifier = Modifier
-                  .fillMaxWidth(),
-            painter = painterResource(id = postagem.fotoRes), contentDescription = null,
-            contentScale = ContentScale.Crop
+                .fillMaxWidth()
+                .aspectRatio(3f / 2f)
+                .background(Color.LightGray),
+            contentScale = ContentScale.Crop,
         )
         Text(
             text = postagem.descricao,
             modifier = Modifier.padding(8.dp),
-            style = MaterialTheme.typography.titleMedium
+            style = MaterialTheme.typography.bodyMedium,
         )
     }
 }
 
-@Preview()
+@Preview(showBackground = true)
 @Composable
-fun  PreviewItemPostagem(){
-    ItemPostagem(Postagem(imagemPerfilRes = R.drawable.perfil_01, nome = "Fulano", fotoRes = R.drawable.carro, descricao = "Uma descrição qualquer"))
+private fun ItemPostagemPreview() {
+    ItemPostagem(
+        Postagem(
+            id = 1,
+            nome = "Fulano",
+            imagemPerfilUrl = "",
+            fotoUrl = "",
+            descricao = "Uma descrição qualquer",
+        )
+    )
 }

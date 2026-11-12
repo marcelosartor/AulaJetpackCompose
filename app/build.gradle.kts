@@ -48,16 +48,12 @@ dependencies {
 
     // Jetpack lifecycle
     // ViewModel
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.compose.runtime.livedata)
-
-    // Fragment Ktx
-    implementation(libs.androidx.fragment.ktx)
 
     //Hilt
     implementation(libs.hilt.android)
@@ -68,7 +64,6 @@ dependencies {
     implementation(libs.coil)
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
